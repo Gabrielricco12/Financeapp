@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestão Financeira - Gabriel & Paloma</title>
+    
+    <!-- PWA Configuration -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#facc15" />
+    <meta name="background-color" content="#ffffff" />
+    
+    <!-- iOS PWA Support -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Gestão Financeira" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    
+    <!-- Android PWA Support -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Gestão Financeira" />
+    
+    <!-- Windows PWA Support -->
+    <meta name="msapplication-TileColor" content="#facc15" />
+    <meta name="msapplication-TileImage" content="/icon-192x192.png" />
+    
+    <!-- SEO and Social Media -->
+    <meta name="description" content="Sistema completo de gestão financeira pessoal para Gabriel e Paloma" />
+    <meta name="keywords" content="gestão financeira, controle de gastos, orçamento pessoal, despesas, receitas" />
+    <meta name="author" content="Gabriel & Paloma" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Gestão Financeira - Gabriel & Paloma" />
+    <meta property="og:description" content="Sistema completo de gestão financeira pessoal" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/icon-512x512.png" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Gestão Financeira - Gabriel & Paloma" />
+    <meta name="twitter:description" content="Sistema completo de gestão financeira pessoal" />
+    <meta name="twitter:image" content="/icon-512x512.png" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- PWA Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('SW registered: ', registration);
+            })
+            .catch((registrationError) => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>
